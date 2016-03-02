@@ -1,0 +1,95 @@
+* {margin: 0; padding: 0; text-decoration: none; list-style: none;}
+
+body {background-color: #234; font-family: Arial, sans-serif;}
+
+.toasts-list {
+	position: fixed;
+	right: 7px; bottom: 7px;
+}
+
+.toast {
+	display: block;
+	box-sizing: border-box;
+	width: 250px;
+	padding: 10px;
+	margin-top: 7px;
+
+	border-radius: 5px;
+	box-shadow: 0 0 5px #000;
+	cursor: pointer;
+
+
+}
+
+	.toast h3 {margin-bottom: 10px;}
+	.toast h3:first-letter {text-transform: uppercase;}
+
+	.toast.success {background-color: #63FF99; color: #2E2E2E;}
+	.toast.info {background-color: #099; color: white;}
+	.toast.warn {background-color: #F5FF63;  color: #2E2E2E;}
+	.toast.error {background-color: #EC4B48; color: white;}
+
+.addToastButton {
+	box-sizing: border-box;
+	display: block;
+	width: 170px;
+	padding: 15px;
+	margin: 40px auto;
+
+	border-radius: 5px;
+	box-shadow: 0 0 15px #111;
+
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+
+	background-color: #467976;
+	color: white;
+}
+
+/*    A N I M A T I O N S    */
+
+.showInfo{animation: showInfo 0.6s cubic-bezier(.52,1.59,.56,.74), hideDown 1s 2s cubic-bezier(.14,.49,.02,-0.95);}
+.showSuccess{animation: showSuccess 0.6s cubic-bezier(.52,1.59,.56,.74), hideDown 1s 2s cubic-bezier(.14,.49,.02,-0.95);}
+.showWarn{animation: showWarn 0.6s ease, hideDown 1s 2s cubic-bezier(.14,.49,.02,-0.95);}
+.showError{animation: showError 0.6s ease, hideDown 1s 2s cubic-bezier(.14,.49,.02,-0.95);}
+
+@keyframes showInfo {
+	0%   {transform: translateX(100%); opacity: 0;}
+	100% {transform: translateX(0%); opacity: 1;}
+}
+
+@keyframes showSuccess {
+	0%   {transform: translateY(100%); opacity: 0;}
+	100% {transform: translateY(0%); opacity: 1;}
+}
+
+@keyframes showWarn {
+	0% {opacity: 0;}
+	20% {transform: rotate(-4deg);}
+	40% {transform: rotate(4deg);}
+	50% {opacity 1;}
+	60% {transform: rotate(-4deg);}
+	80% {transform: rotate(4deg);}
+	100% {transform: rotate(0deg);}
+}
+
+@keyframes showError {
+	0% {opacity: 0;}
+	10% {transform: translateX(-10%);}
+	20% {transform: translateX(9%);}
+	20% {transform: translateX(-8%);}
+	40% {transform: translateX(7%);}
+	50% {transform: translateX(-6%); opacity 1;}
+	60% {transform: translateX(5%);}
+	70% {transform: translateX(-4%);}
+	80% {transform: translateX(3%);}
+	90% {transform: translateX(-2%);}
+	100% {transform: translateX(0%);}
+}
+
+@keyframes hideDown {
+	0%   {transform: translateY(0%); opacity: 1;}
+	50% {opacity: 0;}
+	100% {transform: translateY(100%); opacity: 0}
+}
