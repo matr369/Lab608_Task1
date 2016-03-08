@@ -19,7 +19,7 @@ public class Main {
 					.map(str -> str.substring(argName.length()));
 			return findResult.orElse(defVal);
 		}
-		return null;
+		return defVal;
 	}
 
 	public static int findIntegerParam(String[] args, String argName, int defVal) throws NumberFormatException {
@@ -53,7 +53,7 @@ public class Main {
 		}
 
 		if (size <= 0) {
-			System.err.println("E: ! NOTING TO DRAW !");
+			System.err.println("E: ! NOTHING TO DRAW !");
 			return;
 		}
 
